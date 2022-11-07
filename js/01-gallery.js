@@ -27,9 +27,11 @@ galleryContainer.addEventListener('click', onPreviewImgClick);
 
 function onPreviewImgClick(evt) {
 	evt.preventDefault();
-	// if (!evt.target.classList.contains('gallery__item')) {
-	// 	return;
-	// }
+
+	if (!evt.target.classList.contains('gallery__image')) {
+		return;
+	}
+
 	const instance = basicLightbox.create(`
     <img src="${evt.target.dataset.source}" width="1280" height="auto">
 `, {
